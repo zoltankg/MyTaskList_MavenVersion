@@ -6,6 +6,7 @@ package org.fasttrackit.dev.todolist;
  */
 public class ToDoBean {
 
+
     ToDoBean(int id, String value) {
         this.id=id;
         this.whatToDo=value;
