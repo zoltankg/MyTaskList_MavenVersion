@@ -44,9 +44,11 @@ public class ToDoListServlet extends HttpServlet {
     public void service(HttpServletRequest request, HttpServletResponse response) {
         System.out.println("mytask list service called now.");
 
-        HttpSession session = request.getSession(true);
 
+        HttpSession session = request.getSession(true);
         String action = request.getParameter(ACTION);
+
+
         if (action != null && action.equals(LIST_ACTION)) {
             listAction(request, response);
         } else if (action != null && action.equals(ADD_ACTION)) {
@@ -54,7 +56,11 @@ public class ToDoListServlet extends HttpServlet {
         } else if (action != null && action.equals(DONE_ACTION)) {
             doneAction(request, response);
         }
+
+
     }
+
+
 
     private void listAction(HttpServletRequest request, HttpServletResponse response) {
 
