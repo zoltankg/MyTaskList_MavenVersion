@@ -1,4 +1,4 @@
-package org.fasttrackit.dev.todolist.servlet;
+package org.fasttrack.dev.todolist.servlet;
 
 import org.junit.Test;
 
