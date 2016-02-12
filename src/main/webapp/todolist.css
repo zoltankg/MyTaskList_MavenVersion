@@ -1,6 +1,8 @@
 body {
-    background-image:url("checklist.jpg");
-    padding:5px, 5px, 5px, 5px;
+    background:rgba(211, 211, 211, 0.44) url("checklist.jpg") top right;
+    background-size: 67%;
+    background-repeat: no-repeat;
+
    }
 
 

@@ -26,18 +26,18 @@ public class MyListOfToDoMock {
     private int id;
 
     private void generateInitialList() {
-        toDoList.add(new ToDoBean(1,"sa ud florile"));
-        toDoList.add(new ToDoBean(2,"sa calc camasile"));
-        toDoList.add(new ToDoBean(3,"sa imi fac programare la dentist"));
-        toDoList.add(new ToDoBean(4,"sa verific presiunea la roata de la bicicleta"));
-        toDoList.add(new ToDoBean(5,"sa imi fac tema la geogra"));
-        toDoList.add(new ToDoBean(6,"sa imi sun bunica"));
+        toDoList.add(new ToDoBean(1,"sa ud florile", "21/10"));
+        toDoList.add(new ToDoBean(2,"sa calc camasile", "21/11"));
+        toDoList.add(new ToDoBean(3,"sa imi fac programare la dentist", "12/2"));
+        toDoList.add(new ToDoBean(4,"sa verific presiunea la roata de la bicicleta", "3/11"));
+        toDoList.add(new ToDoBean(5,"sa imi fac tema la geogra", "5/4"));
+        toDoList.add(new ToDoBean(6,"sa imi sun bunica", "14/6"));
         id=6;
     };
 
-   public void addItem(String value) {
+   public void addItem(String value, String dd) {
       id++;
-      toDoList.add(new ToDoBean(id,value));
+      toDoList.add(new ToDoBean(id,value, dd));
         }
 
     public void doneItem(int index) {
@@ -58,6 +58,7 @@ public class MyListOfToDoMock {
             if (!element.isDone()) {
                 System.out.print(element.getId() + ":");
                 System.out.println(element.getWhatToDo());
+                System.out.println(element.getDueDate());
             }
 
         }

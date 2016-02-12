@@ -13,7 +13,7 @@ function listTasks(tasks) {
             '<li>' +
                 //'<input type="checkbox"' + checked + ' value="' + task.id + '" onclick=markDone("' + task.id + '")>' +
             '<input type="checkbox" value="' + task.id + '" onclick=markDone("' + task.id + '")>' +
-            task.name +
+            task.name +' '+ task.dueDate +
             '</li>';
         listHtml += taskHtml;
     }
@@ -39,8 +39,9 @@ function loadTasks() {
 
 function addTask() {
     var toDoText = document.getElementById('todoid').value;
+    var dueDate = document.getElementById('tododuedateid').value;
     $.ajax({
-        url: 'items?action=add&value='+toDoText
+        url: 'items?action=add&value='+toDoText+'&dueDate='+dueDate
     }).done(function (response) {
         location.href = "todolist.html";
     });
