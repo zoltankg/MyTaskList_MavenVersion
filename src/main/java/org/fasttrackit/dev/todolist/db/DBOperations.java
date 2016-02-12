@@ -121,4 +121,34 @@ public class DBOperations {
         conn.close();
     }
 
+    //    private static void demoDelete() throws ClassNotFoundException, SQLException {
+//
+//        // 1. load driver
+//        Class.forName("org.postgresql.Driver");
+//
+//        // 2. define connection params to db
+//        final String URL = "jdbc:postgresql://54.93.65.5:5432/Agenda_Zoltan";
+//        final String USERNAME = "fasttrackit_dev";
+//        final String PASSWORD = "fasttrackit_dev";
+//
+//        // 3. obtain a connection
+//        Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+//
+//        // 4. create a query statement
+//        // PreparedStatement pSt = conn.prepareStatement("DELETE FROM USERS WHERE PK_USER=?");
+//        //pSt.setLong(1, 1);
+//
+//        // 5. execute a prepared statement
+//        //int rowsDeleted = pSt.executeUpdate();
+//
+//        String cititTastatura="'ionel'";
+//        String delete = "DELETE FROM USERS WHERE name="+cititTastatura;
+//        Statement s = conn.createStatement();
+//        s.execute(delete);
+//
+//        System.out.println(rowsDeleted + " rows were deleted.");
+//        // 6. close the objects
+//        pSt.close();
+//        conn.close();
+//    }
 }

@@ -95,7 +95,7 @@ public class ToDoListServlet extends HttpServlet {
         for (ListIterator<ToDoBean> iterator = l.listIterator(); iterator.hasNext(); ) {
             ToDoBean element = iterator.next();
             if (!element.isDone()) {
-                //System.out.print(element.getId() + ":");
+                System.out.print(element.getId() + ":");
                 System.out.println(element.getWhatToDo());
                 jArrayBuilder.add(Json.createObjectBuilder()
                                 .add("name", element.getWhatToDo())
