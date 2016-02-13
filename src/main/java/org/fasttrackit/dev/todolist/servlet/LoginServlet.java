@@ -1,6 +1,8 @@
 package org.fasttrackit.dev.todolist.servlet;
 
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -27,14 +29,33 @@ public class LoginServlet extends HttpServlet {
 
 
 
-    public void service(HttpServletRequest request, HttpServletResponse response) {
-        System.out.println("bccvv[ppo lkbnn");
+    public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        System.out.println("MERGE");
 
+        String user = request.getParameter("username");
+        String pass = request.getParameter("password");
 
-        HttpSession session = request.getSession(true);
+        //HttpSession session = request.getSession(true);
 
+        final String dbuser = "zoltan";
+        final String dbpass = "1234";
 
+        if(dbuser.equals(user) && dbpass.equals(pass)){
 
+            HttpSession session = request.getSession(true);
+            session.setAttribute("username", "orice");
+
+            String success = "/todolist.html";
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(success);
+            dispatcher.forward(request, response);
+
+        }
+        else {
+            System.out.println("nu exista acest user");
+            String back = "/login.html";
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(back);
+            dispatcher.forward(request, response);
+        }
 
     }
 
